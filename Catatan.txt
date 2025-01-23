@@ -1,3 +1,0 @@
-Desain : Menggunakan tools Figma
-Coding : Menggunakan tools Visual Studio
-Script : menggunakan HTML5 dan Framework Tailwind CSS
