@@ -3,59 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Kursus - E-Learning</title>
+    <title>Informasi Kursus - Pengembangan Web</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Font Poppins */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 font-poppins">
+
     <!-- Header -->
-    <header class="bg-blue-600 text-white py-4">
+    <header class="bg-gradient-to-r from-[#203170] to-blue-600 text-white py-6">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Detail Kursus</h1>
+            <h1 class="text-3xl font-semibold">Informasi Kursus</h1>
             <nav class="space-x-4">
-                <a href="dashboard.html" class="hover:underline">Kembali</a>
+                <a href="dashboard.html" class="text-lg hover:underline">Kembali</a>
             </nav>
         </div>
     </header>
 
-    <!-- Detail Kursus -->
-    <main class="py-10">
-        <div class="container mx-auto">
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img src="img/Group 2.png" alt="Pengembangan Web" class="w-full sm:w-2/3 md:w-1/2 lg:w-1/3 mx-auto mt-8">
-                <div class="p-6">
-                    <!-- Navigasi ke bagian -->
-                    <nav class="py-4">
-                        <div class="container mx-auto flex justify-center space-x-6">
-                            <a href="detail.html" class="bg-blue-600 text-white py-2 px-6 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out">Informasi</a>
-                            <a href="detailmodul.html" class="bg-blue-600 text-white py-2 px-6 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out">Detail Modul</a>
-                            <a href="ulasan.html" class="bg-blue-600 text-white py-2 px-6 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out">Ulasan</a>
+    <!-- Informasi Kursus -->
+    <main class="py-16">
+        <div class="container mx-auto px-6">
+            <!-- Detail Kursus -->
+            <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <img src="img/Group 2.png" alt="Detail Kursus" class="w-40 h-40 object-cover rounded-md lg:mr-6">
+                    <div class="mt-4 lg:mt-0 text-center lg:text-left">
+                        <h2 class="text-3xl font-semibold text-gray-800">Pengembangan Web</h2>
+                        <p class="text-gray-600">Pengajar: Bimo Tri Darmawan</p>
+                        <div class="flex items-center justify-center lg:justify-start mt-2">
+                            <span class="text-yellow-500">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            <span class="ml-2 text-gray-500">(4.5/5)</span>
                         </div>
-                    </nav>
-                    
-                    <!-- Bagian Informasi Kursus -->
-                    <section id="informasi">
-                        <h2 class="text-3xl font-bold mb-4">Pengembangan Web</h2>
-                        <p class="text-gray-600 mb-4">Pengajar: Bimo Tri Darmawan</p>
-                        <p class="text-gray-700 mb-4">
-                            Pelajari cara membuat website responsif dengan HTML, CSS, dan JavaScript.
-                            Anda juga akan diperkenalkan dengan framework modern seperti React dan Vue.
-                        </p>
-                        <ul class="list-disc list-inside text-gray-600 mb-4">
-                            <li><strong>Durasi Kursus:</strong> 4 Minggu</li>
-                            <li><strong>Metode Pembelajaran:</strong> Video tutorial, latihan praktek, dan kuis.</li>
-                            <li><strong>Persyaratan Awal:</strong> Tidak ada pengalaman coding yang dibutuhkan. Dasar-dasar HTML dan CSS akan sangat membantu.</li>
-                            <li><strong>Sertifikat:</strong> Sertifikat akan diberikan setelah kursus selesai.</li>
-                            <li><strong>Harga Kursus:</strong> Rp 500.000 (Diskon 20% untuk pendaftaran awal!)</li>
-                        </ul>
-                    </section>
-
-                    <!-- Tombol Mulai Kursus -->
-                    <button class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 mt-6">
-                        Mulai Kursus
-                    </button>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Navigasi Tab -->
+            <div class="flex border-b mb-6">
+                <a href="detail.html" class="py-2 px-6 text-[#3456C5] hover:text-[#203170] border-b-2 border-[#3456C5] transition duration-300">Informasi</a>
+                <a href="detailmodul.html" class="py-2 px-6 text-gray-600 hover:text-[#203170] border-b-2 border-transparent hover:border-[#3456C5] transition duration-300">Detail Modul</a>
+                <a href="ulasan.html" class="py-2 px-6 text-gray-600 hover:text-[#203170] border-b-2 border-transparent hover:border-[#3456C5] transition duration-300">Ulasan</a>
+            </div>
+
+            <!-- Deskripsi Kursus -->
+            <section class="bg-white shadow-lg rounded-lg p-8 mb-8">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-2 border-b pb-2 border-gray-300">Deskripsi</h3>
+                <p class="text-gray-700 mb-4">
+                    Kursus Pengembangan Web ini dirancang untuk siapa saja yang ingin memulai karir sebagai pengembang web profesional atau memperdalam keahliannya di bidang web development. Dengan pendekatan pembelajaran yang praktis dan terstruktur, Anda akan dibimbing dari dasar hingga mampu membuat aplikasi web modern.
+                </p>
+
+                <h3 class="text-xl font-semibold text-gray-800 mb-2 mt-8 border-b pb-2 border-gray-300">Apa yang Akan Anda Pelajari?</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-4">
+                    <li>
+                        <strong>HTML & CSS</strong>: 
+                        Pemahaman mendalam tentang struktur HTML, desain web menarik dengan CSS, dan teknik responsive design.
+                    </li>
+                    <li>
+                        <strong>JavaScript</strong>: 
+                        Dasar-dasar JavaScript, manipulasi DOM, dan penanganan event untuk interaktivitas.
+                    </li>
+                    <li>
+                        <strong>Framework Front-End Modern</strong>: 
+                        Pengantar React.js dan Vue.js, termasuk konsep SPA (Single Page Application).
+                    </li>
+                    <li>
+                        <strong>Back-End Development</strong>: 
+                        Node.js, MongoDB, dan pembuatan API RESTful.
+                    </li>
+                    <li>
+                        <strong>Proyek Akhir</strong>: 
+                        Membuat proyek website lengkap dengan fitur autentikasi pengguna, integrasi API, dan desain responsif.
+                    </li>
+                </ul>
+
+                <h3 class="text-xl font-semibold text-gray-800 mb-2 mt-8 border-b pb-2 border-gray-300">Detail Kursus</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-4">
+                    <li><strong>Durasi:</strong> 4 Minggu (8-10 jam per minggu)</li>
+                    <li><strong>Metode Pembelajaran:</strong> Video tutorial, latihan praktik, dan tugas proyek.</li>
+                    <li><strong>Harga:</strong> Rp 500.000 (Diskon 20% untuk pendaftaran awal)</li>
+                </ul>
+
+                <h3 class="text-xl font-semibold text-gray-800 mb-2 mt-8 border-b pb-2 border-gray-300">Fasilitas dan Manfaat</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-4">
+                    <li>Akses seumur hidup ke semua materi kursus.</li>
+                    <li>Bimbingan langsung dari mentor melalui forum diskusi.</li>
+                    <li>Sertifikat resmi untuk memperkuat CV Anda.</li>
+                </ul>
+            </section>
+
+            <!-- Tombol Mulai Kursus -->
+            <div class="mt-8 text-center">
+                <button class="bg-[#3456C5] text-white py-3 px-6 rounded-[10px] hover:bg-[#2A4B9A] focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
+                    Daftar Sekarang
+                </button>
             </div>
         </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-200 py-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold">Tentang Kami</h3>
+                    <p class="mt-4 text-gray-400">Kami adalah platform pembelajaran online yang membantu Anda menguasai berbagai keterampilan IT.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Kontak</h3>
+                    <ul class="mt-4 text-gray-400">
+                        <li>Email: support@e-learning.com</li>
+                        <li>Telepon: +62 812 3456 7890</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Tautan</h3>
+                    <ul class="mt-4 text-gray-400">
+                        <li><a href="#" class="hover:underline">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="hover:underline">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-gray-500 mt-10">
+                &copy; 2025 E-Learning. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>

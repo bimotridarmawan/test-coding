@@ -5,65 +5,206 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kursus - E-Learning</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Font Poppins */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Animasi untuk kursus card */
+        .course-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animasi Hero Banner */
+        .hero-text {
+            opacity: 0;
+            transform: translateX(50px);
+            animation: slideInRight 1s ease-out forwards;
+        }
+
+        .hero-image {
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideInLeft 1s ease-out forwards;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Kursus Awalnya Tersembunyi */
+        .course-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .course-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 font-poppins">
+
     <!-- Header -->
-    <header class="bg-blue-600 text-white py-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">E-Learning</h1>
-            <nav class="space-x-4">
-                <a href="login.html" class="hover:underline">Logout</a>
+    <header class="bg-gradient-to-r from-[#203170] to-blue-600 text-white py-6">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-3xl font-bold">E-Learning</h1>
+            <nav class="space-x-6">
+                <a href="dashboard.html" class="text-lg hover:underline">Home</a>
+                <a href="kursus.html" class="text-lg hover:underline">Course</a>
+                <a href="tentang.html" class="text-lg hover:underline">Tentang</a>
+                <a href="login.html" class="text-lg border border-white px-3 py-2 rounded-[10px] hover:bg-white hover:text-[#3456C5] transition-colors">
+                    Logout
+                </a>                
             </nav>
         </div>
     </header>
 
+    <!-- Hero Banner -->
+    <section class="relative bg-white py-16">
+        <div class="container mx-auto flex items-center">
+            <div class="flex-1 hero-text">
+                <h2 class="text-4xl font-bold text-gray-800">Selamat Datang di E-Learning</h2>
+                <p class="mt-4 text-gray-600">Platform belajar online untuk meningkatkan skill IT Anda.</p>
+                <a href="kursus.html" class="mt-6 inline-block bg-[#3456C5] text-white py-2 px-4 rounded-[10px] hover:bbg-[#2A4B9A]">Jelajahi Kursus</a>
+            </div>
+            <div class="flex-1 hero-image">
+                <img src="img/elearning.png" alt="E-Learning Banner" class="rounded-lg shadow-lg mx-auto">
+            </div>
+        </div>
+    </section>
+
     <!-- Daftar Kursus -->
     <main class="py-10">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8">Daftar Kursus IT</h2>
+            <h2 class="text-3xl font-bold text-[#203170] text-center mb-8">Daftar Kursus IT</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Kursus 1 -->
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden course-card">
                     <img src="img/Group 2.png" alt="Kursus 1" class="w-full">
                     <div class="p-4">
-                        <h3 class="text-lg font-bold mb-2">Pengembangan Web</h3>
+                        <h3 class="text-lg font-bold text-[#203170] mb-2">Pengembangan Web</h3>
                         <p class="text-gray-600 text-sm mb-2">Belajar membuat website responsif dan modern.</p>
-                        <p class="text-sm text-gray-500">Pengajar: Bimo Tri Darmawan</p>
-                        <a href="detail.html" class="text-blue-600 hover:underline block mt-4">Lihat Detail</a>
+                        <p class="text-sm text-gray-400">Pengajar: Bimo Tri Darmawan</p>
+                        <a href="detail.html" class="block mt-4 bg-[#3456C5] text-white text-center py-2 px-4 rounded hover:bg-[#2A4B9A]">Lihat Detail</a>
                     </div>
                 </div>
                 <!-- Kursus 2 -->
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden course-card">
                     <img src="img/Group 6.png" alt="Kursus 2" class="w-full">
                     <div class="p-4">
-                        <h3 class="text-lg font-bold mb-2">Keamanan Siber</h3>
+                        <h3 class="text-lg font-bold text-[#203170] mb-2">Cyber Security</h3>
                         <p class="text-gray-600 text-sm mb-2">Pelajari cara melindungi data dari ancaman siber.</p>
-                        <p class="text-sm text-gray-500">Pengajar: Ratna Wijaya</p>
-                        <a href="detail.html" class="text-blue-600 hover:underline block mt-4">Lihat Detail</a>
+                        <p class="text-sm text-gray-400">Pengajar: Hamdan Fauzaan</p>
+                        <a href="detail.html" class="block mt-4 bg-[#3456C5] text-white text-center py-2 px-4 rounded hover:bg-[#2A4B9A]">Lihat Detail</a>
                     </div>
                 </div>
                 <!-- Kursus 3 -->
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden course-card">
                     <img src="img/Group 3.png" alt="Kursus 3" class="w-full">
                     <div class="p-4">
-                        <h3 class="text-lg font-bold mb-2">Pemrograman Python</h3>
-                        <p class="text-gray-600 text-sm mb-2">Mulai belajar Python untuk data dan AI.</p>
-                        <p class="text-sm text-gray-500">Pengajar: Ahmad Fauzi</p>
-                        <a href="detail.html" class="text-blue-600 hover:underline block mt-4">Lihat Detail</a>
+                        <h3 class="text-lg font-bold text-[#203170] mb-2">Pemrograman Python</h3>
+                        <p class="text-gray-600 text-sm mb-2">Mempelajari dasar-dasar pemrograman Python untuk data.</p>
+                        <p class="text-sm text-gray-400">Pengajar: Revanza Zakly</p>
+                        <a href="detail.html" class="block mt-4 bg-[#3456C5] text-white text-center py-2 px-4 rounded hover:bg-[#2A4B9A]">Lihat Detail</a>
                     </div>
                 </div>
                 <!-- Kursus 4 -->
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden course-card">
                     <img src="img/Group 51.png" alt="Kursus 4" class="w-full">
                     <div class="p-4">
-                        <h3 class="text-lg font-bold mb-2">Desain UI/UX</h3>
-                        <p class="text-gray-600 text-sm mb-2">Kuasai prinsip desain antarmuka pengguna.</p>
-                        <p class="text-sm text-gray-500">Pengajar: Siti Rahayu</p>
-                        <a href="detail.html" class="text-blue-600 hover:underline block mt-4">Lihat Detail</a>
+                        <h3 class="text-lg font-bold text-[#203170] mb-2">Desain UI/UX</h3>
+                        <p class="text-gray-600 text-sm mb-2">Mempelajari prinsip desain antarmuka pengguna.</p>
+                        <p class="text-sm text-gray-400">Pengajar: Kelfin Maulana</p>
+                        <a href="detail.html" class="block mt-4 bg-[#3456C5] text-white text-center py-2 px-4 rounded hover:bg-[#2A4B9A]">Lihat Detail</a>
                     </div>
                 </div>
             </div>
+            <!-- Button Lihat Kursus Lainnya -->
+            <div class="text-center mt-10">
+                <a href="kursus.html" class="inline-block bg-[#3456C5] text-white py-3 px-6 rounded-lg text-lg hover:bg-[#2A4B9A]">Lihat Kursus Lainnya</a>
+            </div>
         </div>
     </main>
+
+    <!-- Footer -->
+    <footer id="about" class="bg-gray-800 text-gray-200 py-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold">Tentang Kami</h3>
+                    <p class="mt-4 text-gray-400">Kami adalah platform pembelajaran online yang membantu Anda menguasai berbagai keterampilan IT.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Kontak</h3>
+                    <ul class="mt-4 text-gray-400">
+                        <li>Email: support@e-learning.com</li>
+                        <li>Telepon: +62 812 3456 7890</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Tautan</h3>
+                    <ul class="mt-4 text-gray-400">
+                        <li><a href="#" class="hover:underline">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="hover:underline">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-gray-500 mt-10">
+                &copy; 2025 E-Learning. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const courseCards = document.querySelectorAll(".course-card");
+    
+            const showOnScroll = () => {
+                const triggerBottom = window.innerHeight * 0.8;
+    
+                courseCards.forEach(card => {
+                    const cardTop = card.getBoundingClientRect().top;
+                    if (cardTop < triggerBottom) {
+                        card.classList.add("show");
+                    }
+                });
+            };
+    
+            // Jalankan fungsi saat scroll
+            window.addEventListener("scroll", showOnScroll);
+    
+            // Jalankan sekali saat halaman dimuat
+            showOnScroll();
+        });
+    </script>
+    
 </body>
 </html>
